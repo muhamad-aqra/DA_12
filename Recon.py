@@ -12,6 +12,12 @@ class NewSpider(scrapy.Spider):
 
     def parse(self, response):
         css_selector = 'img'
+        reference = 'a'
+        for j in response.css(reference):
+            sel ='@href'
+            yield {
+                'Header': j.xpath(sel).get()
+            }
         for x in response.css(css_selector):
             newsel ='@src'
             yield {
