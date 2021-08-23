@@ -3,7 +3,7 @@ from scrapy.http.request import Request
 
 class NewSpider(scrapy.Spider):
     name = "new_spider"
-    start_urls = ['http://brickset.com/sets/year-2019'] # Website to crawl
+    start_urls = ['http://54.169.8.122/Python/172.18.58.238/algenius/index.html'] # Website to crawl
 
     def start_requests(self):
         headers = {'User-Agent': 'Mozilla/5.0 (Android 7.0; Mobile; rv:54.0) Gecko/54.0 Firefox/54.0'} # User-Agent, change this as needed
