@@ -5,25 +5,33 @@ import requests
 #Q5
 
 url = 'https://brickset.com/sets/year-2009'
-r = requests.get(url) #GET REQUEST
-h = requests.head(url)
-print('GET REQUEST', r.text) #show get request output
-input('Hold...')
-print('Status Code:')
-print('OK', r.status_code)
-input('Hold...')
-print("Header:")
-print("**********")
-for x in h.headers:
-    print("\t ", x, ":", h.headers[x])
-print("**********")
-input('Hold...')
-url2 = 'http://httpbin.org/headers'
-headers = {
-    'User-Agent' : 'Mobile'
-}
-rh = requests.get(url2, headers=headers)
-print(rh.text)
+class Quest5:
+    r = requests.get(url)  # GET REQUEST
+    h = requests.head(url)
+    print('GET REQUEST', r.text) #show get request output
+    input('Hold...')
+
+    #v UnitTesting for OK Status Code
+    def __init__(self, StatusCode):
+        self.StatusCode = StatusCode
+
+    print("Header:")
+    print("**********")
+    for x in h.headers:
+        print("\t ", x, ":", h.headers[x])
+    print("**********")
+    input('Hold...')
+    url2 = 'http://httpbin.org/headers'
+    headers = {
+        'User-Agent' : 'Mobile'
+    }
+    rh = requests.get(url2, headers=headers)
+    print(rh.text)
+    input('Hold...')
+    print('Status Code:')
+
+r = requests.get(url)  # GET REQUEST
+STCode = Quest5(print(r.status_code)) #Refer to Line 14
 input('Hold...')
 
 #Q6
